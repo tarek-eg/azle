@@ -34,7 +34,7 @@ export type Result<T, V> = {
 
 // TODO for int and int64 I think bigint will work
 // export type int = bigint;
-// export type int64 = bigint;
+export type int64 = bigint;
 export type int32 = number;
 export type int16 = number;
 export type int8 = number;

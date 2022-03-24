@@ -16,6 +16,10 @@ export function generateReturnValueHandler(implItemMethod: ImplItemMethod): Rust
             name: String // TODO make this an enum probably
         }
 
+        if return_value.is_bigint() {
+            ${returnTypeName === '' ? `return;` : `return return_value.as_bigint().unwrap().into();`}
+        }
+
         if
             return_value.is_object() == false ||
             return_value.as_object().unwrap().is_generator() == false

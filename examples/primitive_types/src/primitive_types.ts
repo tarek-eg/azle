@@ -3,7 +3,7 @@
 import {
     Query,
     // int,
-    // int64,
+    int64,
     int32,
     int16,
     int8,
@@ -21,10 +21,14 @@ import {
 //     return 170141183460469231731687303715884105727;
 // }
 
+BigInt.prototype.toJSON = function() {
+    return this.toString();
+};
+
 // TODO not fully representable with native JS numbers, bigint required
-// export function getInt64(): Query<int64> {
-//     return 9223372036854775807;
-// }
+export function getInt64(): Query<int64> {
+    return 9223372036854775807n;
+}
 
 export function getInt32(): Query<int32> {
     return 2147483647;
